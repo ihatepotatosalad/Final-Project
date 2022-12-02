@@ -10,6 +10,10 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '../Frontend')))
 
+
+app.use('/posts', require('./Controllers/postController'))
+app.use('/register', require('./Routes/register'))
+
 app.get('/', (req, res) => {
 
 
