@@ -13,6 +13,7 @@ app.use(express.static(path.join(__dirname, '../Frontend')))
 
 app.use('/posts', require('./Controllers/postController'))
 app.use('/register', require('./Routes/register'))
+app.use('/login', require('./Routes/autherization'))
 
 app.get('/', (req, res) => {
 
