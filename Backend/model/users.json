@@ -1,1 +1,25 @@
-[{"username":"dashawn","password":"$2b$10$OUBT7SAy79oaDoRhi/VABes5Gf5jfPZYoCTMoetHsVBceFR96xkMu"},{"username":"Buddycuz","password":"$2b$10$2cAxsIza6bQcupgFDH5H6uuTS6bJmAP0l0VyTgpbuu.zvzDPw6fP6","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJ1ZGR5Y3V6IiwiaWF0IjoxNjcwMDg5Mzc4LCJleHAiOjE2NzAxNzU3Nzh9.Pd16z18mQZL7q3TC4P_ErMqqeluLI7Sd2dhGFEDoGUE"}]
+[
+    {
+        "username": "dashawn",
+        "roles": {
+            "User": 2001
+        },
+        "password": "$2b$10$OUBT7SAy79oaDoRhi/VABes5Gf5jfPZYoCTMoetHsVBceFR96xkMu"
+    },
+    {
+        "username": "Buddycuz",
+        "roles": {
+            "User": 2001
+        },
+        "password": "$2b$10$2cAxsIza6bQcupgFDH5H6uuTS6bJmAP0l0VyTgpbuu.zvzDPw6fP6",
+        "refreshToken": ""
+    },
+    {
+        "username": "Adminuser1",
+        "roles": {
+            "User": 2001,
+            "Admin": 5150
+        },
+        "password": "$2b$10$gYsZVyHYY14yFL2YVcru0uH0tKFBd6Ivh10EJ8nTNQ1TpslGWHXQu"
+    }
+]
