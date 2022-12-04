@@ -2,7 +2,7 @@ const User = require('../model/Users')
 
 
 const jwt = require('jsonwebtoken')
-require('dotenv').config()
+
 
 const handleRefreshToken = async (req, res) => {
     const cookies = req.cookies
@@ -26,7 +26,7 @@ const handleRefreshToken = async (req, res) => {
                     }
                 },
                 process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: '30s' }
+                { expiresIn: '5m' }
             )
             res.json({ accessToken })
         }
