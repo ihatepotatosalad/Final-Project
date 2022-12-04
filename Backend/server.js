@@ -7,6 +7,12 @@ const app = express()
 const credentials = require('./middleware/credentials');
 const verifyJWT = require('./middleware/verifyJWT')
 const cookieParser = require('cookie-parser')
+const mongoose = require('mongoose')
+const connectDB = require('./config/dbConnect')
+
+//DB connection
+connectDB();
+
 
 //MIDDLEWARE
 app.use(credentials);
@@ -36,7 +42,9 @@ app.all('*', (req, res) => {
 
 
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`server started on port ${process.env.PORT}`)
+mongoose.connection.once('open', () => {
+    console.log('connected to DB')
+    app.listen(process.env.PORT, () => {
+        console.log(`server started on port ${process.env.PORT}`)
+    })
 })
