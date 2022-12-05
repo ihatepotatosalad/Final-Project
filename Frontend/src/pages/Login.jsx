@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../features/Auth/authSlice'
 import { useLoginMutation } from '../features/Auth/authApiSlice'
+
 const Login = () => {
   const userRef = useRef()
   const errRef = useRef()
@@ -48,7 +49,7 @@ const Login = () => {
   }
 
   const handleUserInput = (e) => setUser(e.target.value)
-  const handlePwdInput = (e) => setUser(e.target.value)
+  const handlePwdInput = (e) => setPwd(e.target.value)
 
   const content = isLoading ? <h1>Loading...</h1> : (
     <section className="login">

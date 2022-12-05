@@ -8,8 +8,10 @@ const jwt = require('jsonwebtoken')
 
 
 
-router.get('/', (req, res) => {
-    res.send('hello form controller post')
+router.get('/', async (req, res) => {
+    const allPosts = await Post.find()
+    if (!Post) return res.status(204).json({ 'message': 'no  Posts Found' })
+    res.json(allPosts)
 })
 router.post('/', async (req, res) => {
 

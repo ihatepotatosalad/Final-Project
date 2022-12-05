@@ -1,8 +1,9 @@
 import React from 'react'
+import PostsList from '../features/posts/PostsList'
 
 const Fourm = () => {
     return (
-        <div>Fourm</div>
+        <PostsList />
     )
 }
 

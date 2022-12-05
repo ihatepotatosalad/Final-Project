@@ -4,6 +4,9 @@ import { Routes, Route } from 'react-router-dom'
 import { Container } from "react-bootstrap"
 import Welcome from './features/Auth/Welcome'
 import RequireAuth from './features/Auth/RequireAuth'
+// import UsersList from './features/users/usersList'
+import { logOut } from './features/Auth/authSlice'
+
 
 //pages
 import Home from './pages/Home'
