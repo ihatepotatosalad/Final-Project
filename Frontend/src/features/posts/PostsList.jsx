@@ -1,13 +1,16 @@
 import { useGetPostsQuery } from './postsApiSlice'
 import { Link } from 'react-router-dom'
-
+import { useSelector } from 'react-redux'
+import { selectCurrentUser, selectCurrentToken } from '../Auth/authSlice'
+import { useDispatch } from 'react-redux'
 import React from 'react'
 
 
 
 
 const PostsList = () => {
-
+    const dispatch = useDispatch()
+    const user = useSelector(selectCurrentUser)
     const {
         data: posts,
         isLoading,
@@ -18,7 +21,7 @@ const PostsList = () => {
     let content;
     if (isLoading) {
         content = <p>Loading..</p>
-    } else if (isSuccess) {
+    } else if (isSuccess && user) {
         content = (
             <section className='postsbase'>
                 <h1>Posts</h1>
@@ -31,7 +34,9 @@ const PostsList = () => {
             </section>
         )
     } else if (isError) {
-        content = <p>{JSON.stringify(error)}</p>
+        content = <p>You must be logged in to see Posts</p>
+    } else {
+        content = <p>You must be logged in to see Posts</p>
     }
     return content
 

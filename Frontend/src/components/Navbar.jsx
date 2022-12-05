@@ -13,11 +13,12 @@ const Navbar = () => {
     const user = useSelector(selectCurrentUser)
     const token = useSelector(selectCurrentToken)
 
+
     let logOutbutton;
     let userRoles
     if (user) {
         logOutbutton = <button onClick={() => dispatch(logOut())}>Logout</button>
-        userRoles = <p>{user.roles}</p>
+
     }
 
     return (
@@ -37,7 +38,7 @@ const Navbar = () => {
                         Signup
                     </Nav.Link>
                     {logOutbutton}
-                    {userRoles}
+
                 </Nav>
                 <button>{user ? user : "Guest"}</button>
             </Container>

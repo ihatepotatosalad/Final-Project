@@ -30,7 +30,7 @@ app.use('/auth', require('./Routes/autherization'));
 app.use('/refresh', require('./Routes/refresh'));
 app.use('/logout', require('./Routes/logout'));
 
-// app.use(verifyJWT);
+app.use(verifyJWT);
 app.use('/users', require('./Controllers/usersController'));
 app.use('/posts', require('./Controllers/postController'));
 
