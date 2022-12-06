@@ -37,6 +37,9 @@ const Navbar = () => {
                     <Nav.Link to='/signup' as={NavLink}>
                         Signup
                     </Nav.Link>
+                    <Nav.Link to='/users' as={NavLink}>
+                        Users
+                    </Nav.Link>
                     {logOutbutton}
 
                 </Nav>

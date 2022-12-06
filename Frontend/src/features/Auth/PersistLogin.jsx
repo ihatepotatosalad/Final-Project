@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useRefreshMutation } from "./authApiSlice";
 import usePersist from "../../customHooks/usePersist";
@@ -43,7 +43,7 @@ const PersistLogin = () => {
         content = <Outlet />
     } else if (isLoading) { //persist: yes, token: no
         console.log('loading')
-        content = <PulseLoader color={"#FFF"} />
+
     } else if (isError) { //persist: yes, token: no
         console.log('error')
         content = (
@@ -55,9 +55,9 @@ const PersistLogin = () => {
     } else if (isSuccess && trueSuccess) { //persist: yes, token: yes
         console.log('success')
         content = <Outlet />
-    } else if (token && isUninitialized) { //persist: yes, token: yes
+    } else if (token && isUninititalized) { //persist: yes, token: yes
         console.log('token and uninit')
-        console.log(isUninitialized)
+        console.log(isUninititalized)
         content = <Outlet />
     }
 

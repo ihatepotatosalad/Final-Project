@@ -29,7 +29,7 @@ const UsersList = () => {
             </section>
         )
     } else if (isError) {
-        content = <p>{JSON.stringify(error)}</p>
+        content = <p>Must be logged in to view Users</p>
     }
     return content
 
