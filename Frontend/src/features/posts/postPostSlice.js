@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const POSTURL = 'http://localhost:3000/posts'
 
+
 const initialState = {
     posts: [],
     status: 'idle',
@@ -10,7 +11,18 @@ const initialState = {
 }
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    const response = await axios.get(POSTURL)
+    const response = await axios.get(POSTURL, {
+        credentials: 'include',
+        prepareHeaders: (headers, { getState }) => {
+            const token = getState().auth.token
+            if (token) {
+                headers.set('authorization', `Bearer ${token}`)
+            }
+            return headers
+        }
+    })
+
+
     return response.data
 })
 
