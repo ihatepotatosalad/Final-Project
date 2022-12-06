@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../features/Auth/authSlice'
 import { useLoginMutation } from '../features/Auth/authApiSlice'
+import usePersist from '../customHooks/usePersist'
 
 const Login = () => {
   const userRef = useRef()
@@ -11,6 +12,7 @@ const Login = () => {
   const [user, setUser] = useState('')
   const [pwd, setPwd] = useState('')
   const [errMsg, setErrMsg] = useState('')
+  const [persist, setPersist] = usePersist()
   const navigate = useNavigate()
 
   const [login, { isLoading }] = useLoginMutation()
@@ -50,6 +52,7 @@ const Login = () => {
 
   const handleUserInput = (e) => setUser(e.target.value)
   const handlePwdInput = (e) => setPwd(e.target.value)
+  const handlePersistToggle = () => setPersist(prev => !prev)
 
   const content = isLoading ? <h1>Loading...</h1> : (
     <section className="login">
@@ -73,6 +76,16 @@ const Login = () => {
           onChange={handlePwdInput}
           required />
         <button>Login</button>
+        <label htmlFor='persist' className='persistForm'>
+          <input
+            type='checkbox'
+            className='form-checkbox'
+            id='persist'
+            onChange={handlePersistToggle}
+            checked={persist} />
+          Trust this device
+
+        </label>
       </form>
     </section>
   )

@@ -6,7 +6,8 @@ export const postsApiSlice = apiSlice.injectEndpoints({
             query: () => '/posts',
 
 
-        })
+        }),
+
     })
 })
 
