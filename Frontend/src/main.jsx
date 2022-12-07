@@ -8,9 +8,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { store } from './App/store'
 import { Provider } from 'react-redux'
 import { disableReactDevTools } from '@fvilers/disable-react-devtools'
-import { processResult } from 'immer/dist/internal'
 
-if (processResult.env.NODE_ENV === 'production') disableReactDevTools()
+
+if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
