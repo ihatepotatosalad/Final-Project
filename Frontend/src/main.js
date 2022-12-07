@@ -14,15 +14,15 @@ if (process.env.NODE_ENV === 'production') disableReactDevTools()
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
 
-      <BrowserRouter>
+  <Provider store={store}>
 
-        <App />
+    <BrowserRouter>
 
-      </BrowserRouter >
+      <App />
 
-    </Provider>
-  </React.StrictMode>
+    </BrowserRouter >
+
+  </Provider>
+
 )
