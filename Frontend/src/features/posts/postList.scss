@@ -1,0 +1,37 @@
+// .list-post {
+//     list-style-type: none;
+//     position: relative;
+//     background: #00aabb;
+//     border-radius: .4em;
+//     padding: 5px;
+//     margin-bottom: 3px;
+
+//     .list-post:after {
+//         content: '';
+//         position: absolute;
+//         bottom: 0;
+//         left: 50%;
+//         width: 0;
+//         height: 0;
+//         border: 20px solid transparent;
+//         border-top-color: #00aabb;
+//         border-bottom: 0;
+//         border-left: 0;
+//         margin-left: -10px;
+//         margin-bottom: -20px;
+//     }
+
+// }
+
+.list-post {
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 15px;
+    background: #00bfb6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-family: arial;
+    position: relative;
+}

@@ -2,9 +2,13 @@ import { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setCredentials } from '../features/Auth/authSlice'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser, selectCurrentToken } from '../features/Auth/authSlice'
 
 import { useRegisterMutation } from '../features/Auth/registerApiSlice'
 const Signup = () => {
+    const currentUser = useSelector(selectCurrentUser)
+    const currentToken = useSelector(selectCurrentToken)
     const userRef = useRef()
     const errRef = useRef()
     const [user, setUser] = useState('')
