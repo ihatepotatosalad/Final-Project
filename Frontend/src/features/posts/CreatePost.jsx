@@ -51,7 +51,8 @@ const CreatePost = () => {
 
 
     return (
-        <section className="Post-Form">
+
+        <section className="post-form">
             <p className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
             <h1 className='greeting'>New Post</h1>
 
