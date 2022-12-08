@@ -7,7 +7,7 @@ import { selectCurrentUser, selectCurrentToken } from '../Auth/authSlice'
 import { useDispatch } from 'react-redux'
 import React from 'react'
 import './postList.scss'
-import CreatePost from './createPost'
+import CreatePost from './CreatePost'
 
 
 
