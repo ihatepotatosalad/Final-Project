@@ -16,6 +16,11 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    refreshToken: String
+    refreshToken: String,
+    postCreated: {
+        type: Number,
+        default: 0
+    }
+
 })
 module.exports = mongoose.model('User', UserSchema)
