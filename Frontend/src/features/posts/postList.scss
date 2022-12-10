@@ -23,11 +23,24 @@
 
 // }
 
-.list-post {
+.list-post-left {
     width: 300px;
     margin: 50px auto;
     border-radius: 15px;
     background: #00bfb6;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-family: arial;
+    position: relative;
+}
+
+.list-post-right {
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 15px;
+    background: blue;
     color: #fff;
     padding: 20px;
     text-align: center;
