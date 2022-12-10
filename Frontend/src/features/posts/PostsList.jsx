@@ -1,5 +1,6 @@
 
 import { useGetPostsQuery } from './postsApiSlice'
+import { useState } from 'react'
 import { useSendPostsMutation } from './postsApiSlice'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -8,6 +9,8 @@ import { useDispatch } from 'react-redux'
 import React from 'react'
 import './postList.scss'
 import CreatePost from './CreatePost'
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -15,6 +18,8 @@ import CreatePost from './CreatePost'
 const PostsList = () => {
     const dispatch = useDispatch()
     const user = useSelector(selectCurrentUser)
+    const [userPage, setUserPage] = useState('')
+    const navigate = useNavigate();
     const {
         data: posts,
         isLoading,
@@ -22,6 +27,9 @@ const PostsList = () => {
         isError,
         error
     } = useGetPostsQuery()
+
+
+
     let content;
     if (isLoading) {
         content = <p>Loading..</p>
@@ -44,7 +52,7 @@ const PostsList = () => {
 
 
 
-                        return <li key={i} className={classNames}>{post.name} wrote:  {post.message}</li>
+                        return <li key={i} className={classNames}><button value={post.name} onClick={(e) => navigate(`/users/${e.target.value}`)}>{post.name}</button> wrote:  {post.message}</li>
                     })}
                 </ul>
 

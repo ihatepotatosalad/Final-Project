@@ -8,6 +8,7 @@ import RequireAuth from './features/Auth/RequireAuth'
 import { logOut } from './features/Auth/authSlice'
 import PersistLogin from './features/Auth/PersistLogin'
 import UsersList from './features/users/UsersList'
+import CertainUser from './pages/CertainUser'
 
 
 
@@ -35,6 +36,9 @@ function App() {
           <Route path='/refresh' element={<PersistLogin />} />
 
           <Route path='/fourm' element={<Fourm />} />
+          <Route path='/users/:id' element={<CertainUser />} loader={({ params }) => {
+            console.log(params.id)
+          }} />
           <Route path='/signup' element={<Signup />} />
 
           <Route element={<RequireAuth />} />
