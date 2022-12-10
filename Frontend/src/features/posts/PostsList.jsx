@@ -32,6 +32,9 @@ const PostsList = () => {
                 <CreatePost />
                 <ul>
                     {posts.map((post, i) => {
+                        let classNameLeft = 'list-post-left'
+                        let classNameRight = 'list-post-right'
+
                         return <li key={i} className='list-post'>{post.name} wrote:  {post.message}</li>
                     })}
                 </ul>
