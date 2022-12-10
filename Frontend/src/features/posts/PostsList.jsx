@@ -31,7 +31,7 @@ const PostsList = () => {
                 <h1>Posts</h1>
                 <CreatePost />
                 <ul>
-                    {posts.map((post, i) => {
+                    {posts.slice(0).reverse().map((post, i) => {
                         let classNames;
                         let classNameLeft = 'list-post-left'
                         let classNameRight = 'list-post-right'
