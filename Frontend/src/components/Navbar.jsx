@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import { selectCurrentUser, selectCurrentToken } from '../features/Auth/authSlice'
 import { useDispatch } from 'react-redux'
 import { logOut } from '../features/Auth/authSlice'
+import './navbar.scss'
 
 
 
@@ -17,7 +18,7 @@ const Navbar = () => {
     let logOutbutton;
     let userRoles
     if (user) {
-        logOutbutton = <button onClick={() => dispatch(logOut())}>Logout</button>
+        logOutbutton = <button className='nav-bar' onClick={() => dispatch(logOut())}>Logout</button>
 
     }
 
@@ -43,7 +44,7 @@ const Navbar = () => {
                     {logOutbutton}
 
                 </Nav>
-                <button>{user ? user : "Guest"}</button>
+                <button className='nav-bar'>{user ? user : "Guest"}</button>
             </Container>
 
         </NavbarBs>
