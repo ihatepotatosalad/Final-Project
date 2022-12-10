@@ -34,6 +34,14 @@
     font-weight: 900;
     font-family: arial;
     position: relative;
+
+    button {
+        border: none;
+        background-color: #00bfb6;
+        font-weight: 900;
+        font-family: arial;
+        color: white
+    }
 }
 
 .list-post-right {
@@ -47,4 +55,12 @@
     font-weight: 900;
     font-family: arial;
     position: relative;
+
+    button {
+        border: none;
+        background-color: blue;
+        font-weight: 900;
+        font-family: arial;
+        color: white
+    }
 }
