@@ -4,11 +4,13 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import './usersList.scss'
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser } from '../Auth/authSlice';
 
 
 
 const UsersList = () => {
-
+    const user = useSelector(selectCurrentUser)
     const {
         data: users,
         isLoading,
@@ -22,7 +24,7 @@ const UsersList = () => {
     let content;
     if (isLoading) {
         content = <p>Loading..</p>
-    } else if (isSuccess) {
+    } else if (isSuccess && user) {
         content = (
             <section className='userbase'>
                 <h1>Users</h1>
@@ -52,6 +54,8 @@ const UsersList = () => {
             </section>
         )
     } else if (isError) {
+        content = <p>Must be logged in to view Users</p>
+    } else {
         content = <p>Must be logged in to view Users</p>
     }
     return content
