@@ -3,7 +3,7 @@ import { logOut, setCredentials } from '../../features/Auth/authSlice'
 
 //http://localhost:3000
 const baseQuery = fetchBaseQuery({
-    baseUrl: 'https://reactblogsite.onrender.com',
+    baseUrl: 'https://reactblogsite-api.onrender.com',
     credentials: 'include',
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.token
